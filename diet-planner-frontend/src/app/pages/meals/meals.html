@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">🍽️ Your Personalized Meal Plan</h2>
+
+  <div *ngIf="mealPlan; else errorBlock">
+    <p class="text-center total-calories fs-5">
+      <strong>🔥 Total Calories:</strong> {{ mealPlan.calorieGoal | number:'1.0-0' }} kcal
+    </p>
+
+    <div class="row justify-content-center">
+      <div
+        *ngFor="let meal of mealPlan.meals; let i = index"
+        class="col-md-6 col-lg-4 mb-4"
+      >
+        <div class="card shadow-sm border-0 h-100 meal-card">
+          <div class="card-body d-flex align-items-center">
+            <div class="fs-3 me-3">{{ getEmojiForMeal(i) }}</div>
+            <div class="flex-grow-1">{{ meal }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #errorBlock>
+    <div class="alert alert-danger text-center">
+      {{ error }}
+    </div>
+  </ng-template>
+</div>

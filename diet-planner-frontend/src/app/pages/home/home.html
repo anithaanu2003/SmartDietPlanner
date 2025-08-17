@@ -1,0 +1,24 @@
+<div class="home-container text-center animate-fade-in">
+  <h1 class="main-title">🥗 Smart Diet Planner</h1>
+
+  <p class="subtitle">
+    🍽️ Personalized Meal Plans • 🧮 Based on Your BMI • 🚀 Track Your Progress
+  </p>
+
+  <hr class="divider" />
+
+  <p class="subtext">
+    Achieve your health goals with personalized meal plans<br />
+    based on your <strong>body type</strong>, <strong>lifestyle</strong>, and <strong>preferences</strong>.
+  </p>
+
+  <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+    <a *ngIf="!isLoggedIn()" routerLink="/register" class="btn glow-btn">Register</a>
+    <a *ngIf="!isLoggedIn()" routerLink="/login" class="btn glow-btn">Login</a>
+    <a *ngIf="isLoggedIn()" routerLink="/meals" class="btn glow-btn">Go to Meals</a>
+  </div>
+
+  <div>
+    <img src="/assets/healthy-food.svg" alt="Healthy food" class="home-image" />
+  </div>
+</div>

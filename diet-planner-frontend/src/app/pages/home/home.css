@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #f1f8e9, #e0f7fa);
+  overflow-x: hidden;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Floating background icons */
+:host::before,
+:host::after {
+  content: '';
+  position: absolute;
+  background-image: url('/assets/healthy-food.svg');
+  background-repeat: no-repeat;
+  background-size: 100px;
+  opacity: 0.04;
+  z-index: 0;
+}
+
+:host::before {
+  top: 10%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  animation: float 12s infinite ease-in-out;
+}
+
+:host::after {
+  bottom: 15%;
+  right: 8%;
+  width: 120px;
+  height: 120px;
+  animation: floatReverse 14s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Glass container */
+.home-container {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  border-radius: 25px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.main-title {
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+}
+
+.subtext {
+  font-size: 1.25rem;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.glow-btn {
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(to right, #66bb6a, #43a047);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(102, 187, 106, 0.5);
+  transition: all 0.4s ease;
+  animation: pulse 3s infinite;
+}
+
+.glow-btn:hover {
+  transform: scale(1.03);
+  background: #388e3c;
+  box-shadow: 0 0 20px #66bb6a, 0 0 25px #66bb6a;
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(102, 187, 106, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(102, 187, 106, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(102, 187, 106, 0); }
+}
+
+.home-image {
+  max-width: 350px;
+  margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.home-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.25rem;
+  }
+
+  .subtext {
+    font-size: 1rem;
+  }
+
+  .glow-btn {
+    width: 100%;
+    padding: 0.8rem 0;
+  }
+
+  .home-image {
+    max-width: 100%;
+  }
+}
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #388e3c;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  width: 60px;
+  margin: 0 auto 1.5rem auto;
+  border: 2px solid #c8e6c9;
+  border-radius: 2px;
+}
+
+body {
+  background-color: #f1f8e9;
+  background-image: radial-gradient(#e0f2f1 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+

@@ -1,0 +1,90 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.total-calories {
+  font-size: 20px;
+  padding: 15px;
+  background-color: #e3f2fd;
+  color: #007bff;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px dashed #007bff;
+  margin-bottom: 30px;
+}
+
+.meal-card {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  color: #343a40;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.meal-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+}
+
+.meal-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.meal-text {
+  flex: 1;
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+/* Background Variations */
+.meal-0 { background-color: #fffbe6; }
+.meal-1 { background-color: #e0f7fa; }
+.meal-2 { background-color: #e8f5e9; }
+.meal-3 { background-color: #fce4ec; }
+.meal-4 { background-color: #ede7f6; }
+.meal-5 { background-color: #fff3e0; }
+
+/* Fade-in animation */
+.animated-card {
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.alert-danger {
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}

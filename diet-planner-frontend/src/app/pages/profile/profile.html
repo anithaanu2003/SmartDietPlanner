@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+
+<!-- Profile Page Container -->
+<div class="container mt-5 pt-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-md-11">
+
+      <div class="card shadow-lg p-4 rounded-4 border-0">
+        <div class="text-center mb-3">
+          <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="User Icon" style="width: 80px; border-radius: 50%" />
+          <h2 class="text-success mt-3">👤 User Profile</h2>
+        </div>
+
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="age" class="form-label">Age (in years)</label>
+              <input id="age" type="number" class="form-control" formControlName="age" placeholder="e.g. 25" />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Gender</label>
+              <select class="form-select" formControlName="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="height" class="form-label">Height (in cm)</label>
+              <input id="height" type="number" class="form-control" formControlName="height" placeholder="e.g. 165" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="weight" class="form-label">Weight (in kg)</label>
+              <input id="weight" type="number" class="form-control" formControlName="weight" placeholder="e.g. 60" />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Food Preference</label>
+              <select class="form-select" formControlName="foodPreference">
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Goal</label>
+              <select class="form-select" formControlName="goal">
+                <option value="maintain">⚖️ Maintain Weight</option>
+                <option value="lose">🔥 Weight Loss</option>
+                <option value="gain">💪 Weight Gain</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success btn-lg px-4">
+              {{ profileExists ? 'Update Profile' : 'Save Profile' }}
+            </button>
+          </div>
+        </form>
+
+        <div *ngIf="successMessage" class="alert alert-success mt-4 text-center">
+          {{ successMessage }}
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger mt-4 text-center">
+          {{ errorMessage }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

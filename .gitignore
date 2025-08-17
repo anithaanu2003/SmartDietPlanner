@@ -1,0 +1,7 @@
+# Ignore Node modules
+diet-planner-frontend/node_modules
+# Ignore Angular build output
+diet-planner-frontend/dist
+# Ignore .NET build output
+DietPlannerAPI/bin
+DietPlannerAPI/obj
